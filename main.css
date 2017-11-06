@@ -1,10 +1,18 @@
 body {
+   background-image: url("blue_lambo.jpg");
+}
+
+div.container{
   display: grid;
-  grid-template-columns: 600px 200px;
-  grid-template-areas:
+  grid-template-columns: 400px 400px;
+   grid-template-areas:
     "header header"
     "main   aside"
-    "footer footer"
+    "footer footer";
+
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
 }
 
 header {
@@ -25,4 +33,15 @@ aside{
 footer{
  background-color: #ffff99;
  grid-area: footer;
+}
+
+@media (max-width: 600px) {
+  div.container{
+  grid-template-colums: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "aside"
+    "footer";
+  }
 }
